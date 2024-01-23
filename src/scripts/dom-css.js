@@ -1,6 +1,6 @@
 import Engine from "./engine";
 
-const targetFps = 60;
+const targetFps = 120;
 
 class DomEngine extends Engine {
   constructor() {
