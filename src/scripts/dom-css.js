@@ -50,11 +50,12 @@ class DomEngine extends Engine {
 
     const sheet = new CSSStyleSheet();
     sheet.replaceSync(`@keyframes move {
-  from { translate: ${this.width}px 0px; }
-  to { translate: -100% 0px; }
+  from { transform: translate(${this.width}px, 0px); }
+  to { transform: translate(-100%, 0px); }
 }
 .rectangle {
   animation: move calc(var(--duration, 0) * 1s) calc(var(--delay, 0) * 1s) linear both infinite;
+  animation-composition: add;
 }`);
     document.adoptedStyleSheets = [sheet];
 
