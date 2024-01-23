@@ -40,8 +40,8 @@ class DomEngine extends Engine {
 
       // Animate the box via CSS Animations
       const duration = this.width / targetFps * speed;
-      rect.style.setProperty('--duration', duration.toFixed(3));
-      rect.style.setProperty('--delay', ((duration * (x / this.width)) - duration).toFixed(3));
+      rect.style.setProperty('animation-duration', `${duration.toFixed(3)}s`);
+      rect.style.setProperty('animation-delay', `${((duration * (x / this.width)) - duration).toFixed(3)}s`);
 
       this.canvas.appendChild(rect);
       rects[i] = { x, y, size: size / 2, speed, el: rect };
@@ -54,7 +54,9 @@ class DomEngine extends Engine {
   to { transform: translate(-100%, 0px); }
 }
 .rectangle {
-  animation: move calc(var(--duration, 0) * 1s) calc(var(--delay, 0) * 1s) linear both infinite;
+  animation-name: move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   animation-composition: add;
 }`);
     document.adoptedStyleSheets = [sheet];
