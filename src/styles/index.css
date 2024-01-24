@@ -42,7 +42,7 @@ canvas,
 
 /* dom canvas */
 .canvas {
-  overflow: hidden;
+  overflow: clip;
   position: relative;
   display: block;
 }
