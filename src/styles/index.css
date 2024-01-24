@@ -31,6 +31,17 @@
   box-sizing: content-box;
 }
 
+.meterControl {
+  white-space: nowrap;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+
+#showFpsMeter {
+  margin-right: 5px;
+}
+
 /*
 TODO: fix Konva to not overwrite canvas styles
 */

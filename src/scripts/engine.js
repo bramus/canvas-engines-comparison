@@ -1,15 +1,18 @@
+import "fpsmeter";
+
 class Engine {
   constructor() {
     this.content = document.querySelector("main");
     this.meterContainer = this.content.querySelector(".meter");
     this.countLinks = this.content.querySelectorAll(".count-selector > a");
+    this.fpsMeterControl = document.querySelector("#showFpsMeter");
 
     this.width = Math.min(this.content.clientWidth, 1000);
     this.height = this.content.clientHeight * 0.75;
     this.count;
 
-    // this.initFpsmeter();
     this.initSettings();
+    this.initFpsmeter();
 
     this.initMenuLink();
 
@@ -27,6 +30,10 @@ class Engine {
   }
 
   initFpsmeter() {
+    if (!this.showFpsMeter) {
+      return;
+    };
+
     this.meter = new window.FPSMeter(this.meterContainer, {
       graph: 1,
       heat: 1,
@@ -41,9 +48,11 @@ class Engine {
 
   initSettings() {
     const count = JSON.parse(localStorage.getItem("count"));
+    const showFpsMeter = JSON.parse(localStorage.getItem("showFpsMeter"));
 
     this.count = count || { index: 1, value: 1000 };
-    localStorage.setItem("count", JSON.stringify(this.count));
+    this.showFpsMeter = showFpsMeter ?? true;
+    this.fpsMeterControl.checked = this.showFpsMeter;
 
     this.countLinks.forEach((link, index) => {
       this.countLinks[this.count.index].classList.toggle("selected", true);
@@ -60,6 +69,12 @@ class Engine {
 
         this.render();
       });
+    });
+
+    this.fpsMeterControl.addEventListener('change', (e) => {
+      this.showFpsMeter = this.fpsMeterControl.checked;
+      localStorage.setItem("showFpsMeter", JSON.stringify(this.showFpsMeter));
+      window.location.reload();
     });
   }
 
