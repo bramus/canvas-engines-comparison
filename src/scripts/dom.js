@@ -42,7 +42,6 @@ class DomEngine extends Engine {
       rect.className = "rectangle";
       rect.style.width = size + "px";
       rect.style.height = size + "px";
-      rect.style.position = "absolute";
       rect.style.transform = `translate(${x}px, ${y}px)`;
       this.canvas.appendChild(rect);
       rects[i] = { x, y, size: size / 2, speed, el: rect };

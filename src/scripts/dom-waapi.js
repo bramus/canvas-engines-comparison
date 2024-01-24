@@ -34,7 +34,6 @@ class DomEngine extends Engine {
       rect.className = "rectangle";
       rect.style.width = size + "px";
       rect.style.height = size + "px";
-      rect.style.position = "absolute";
       rect.style.transform = `translate(0px, ${y}px)`; // 0, because we composite the x-translation further down.
 
       // Animate the box via WAAPI

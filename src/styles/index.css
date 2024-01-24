@@ -44,11 +44,11 @@ canvas,
 .canvas {
   overflow: hidden;
   position: relative;
-  display: inline-flex;
+  display: block;
 }
 
 div.rectangle {
-  display: inline-block;
+  display: block;
   position: absolute;
   background: white;
   border: solid 1px;
