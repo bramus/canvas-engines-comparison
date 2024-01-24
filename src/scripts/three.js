@@ -66,7 +66,7 @@ class ThreeEngine extends Engine {
       this.renderer.domElement
     );
     this.renderer.render(this.scene, this.camera);
-    this.meter.tick();
+    this.meter?.tick();
   }
 
   render() {

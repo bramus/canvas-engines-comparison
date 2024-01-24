@@ -31,7 +31,7 @@ class LeaferEngine extends Engine {
       }
     }
 
-    this.meter.tick();
+    this.meter?.tick();
 
     this.request = requestAnimationFrame(() => this.animate());
   }

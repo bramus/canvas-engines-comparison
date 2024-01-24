@@ -41,7 +41,7 @@ class CanvasKitEngine extends Engine {
       canvas.drawRect4f(r.x, r.y, r.x + r.size, r.y + r.size, this.fillPaint);
     }
     this.surface.flush();
-    this.meter.tick();
+    this.meter?.tick();
 
     this.request = window.requestAnimationFrame(() => this.animate());
   }

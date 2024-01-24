@@ -32,7 +32,7 @@ class FabricEngine extends Engine {
       }
     }
     this.fabricCanvas.renderAll();
-    this.meter.tick();
+    this.meter?.tick();
 
     this.request = requestAnimationFrame(() => this.animate());
   }

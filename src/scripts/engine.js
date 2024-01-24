@@ -10,7 +10,7 @@ class Engine {
     this.height = this.content.clientHeight * 0.75;
     this.count;
 
-    this.initFpsmeter();
+    // this.initFpsmeter();
     this.initSettings();
 
     this.initMenuLink();

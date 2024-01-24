@@ -13,7 +13,7 @@ class DomEngine extends Engine {
   }
 
   animate() {
-    this.meter.tick();
+    this.meter?.tick();
     this.request = requestAnimationFrame(() => this.animate());
   }
 
@@ -53,7 +53,9 @@ class DomEngine extends Engine {
     }
     this.rects = rects;
 
-    this.request = requestAnimationFrame(() => this.animate());
+    if (this.meter) {
+      this.request = requestAnimationFrame(() => this.animate());
+    }
   }
 }
 

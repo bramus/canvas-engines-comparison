@@ -65,7 +65,7 @@ class KonvaEngine extends Engine {
         element.rectangle.setX(x);
       });
       layer.batchDraw();
-      this.meter.tick();
+      this.meter?.tick();
     };
 
     this.request = requestAnimationFrame(draw);

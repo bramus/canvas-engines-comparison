@@ -33,7 +33,7 @@ class PixiEngine extends Engine {
       this.rects[i].x = this.width + this.rects[i].size / 2;
     });
 
-    this.meter.tick();
+    this.meter?.tick();
   }
 
   render() {

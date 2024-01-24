@@ -123,7 +123,7 @@ class WebGLEngine extends Engine {
     ++this.time;
     this.setTime();
     this.draw();
-    this.meter.tick();
+    this.meter?.tick();
     this.request = requestAnimationFrame(() => this.step());
   }
 

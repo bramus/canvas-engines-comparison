@@ -26,7 +26,7 @@ class MeshEngine extends Engine {
     }
     const meshes = rects.map((rect) => rect.mesh);
     this.renderer.drawMeshes(meshes);
-    this.meter.tick();
+    this.meter?.tick();
 
     this.request = window.requestAnimationFrame(() => this.animate());
   }

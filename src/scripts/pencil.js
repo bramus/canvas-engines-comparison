@@ -27,7 +27,7 @@ class PencilEngine extends Engine {
       if (r.position.x + r.size < 0) r.position.x = this.scene.width + r.size;
     });
 
-    this.meter.tick();
+    this.meter?.tick();
   }
 
   render() {

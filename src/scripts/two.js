@@ -50,7 +50,7 @@ class TwoEngine extends Engine {
         rects[i].x = this.two.width + rects[i].size / 2;
       });
 
-      this.meter.tick();
+      this.meter?.tick();
     });
   }
 }

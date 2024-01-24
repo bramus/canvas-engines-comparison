@@ -55,7 +55,7 @@ class PaperEngine extends Engine {
         rects[i].x = this.width + rects[i].size / 2;
       });
 
-      this.meter.tick();
+      this.meter?.tick();
     };
     this.request = window.requestAnimationFrame(animate);
   }

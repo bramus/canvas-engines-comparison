@@ -23,7 +23,7 @@ class PtsEngine extends Engine {
 
   animate(time, ftime) {
     // fps meter
-    this.meter.tick();
+    this.meter?.tick();
 
     this.form.fill("#fff").stroke("#000");
 

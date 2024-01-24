@@ -28,7 +28,7 @@ class Next2DEngine extends Engine {
   }
 
   animate() {
-    this.meter.tick();
+    this.meter?.tick();
 
     for (let i = 0; i < this.rects.length; i++) {
       const rect = this.rects[i];
