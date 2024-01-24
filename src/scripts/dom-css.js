@@ -36,7 +36,7 @@ class DomEngine extends Engine {
       rect.style.width = size + "px";
       rect.style.height = size + "px";
       rect.style.position = "absolute";
-      rect.style.transform = `translate(0, ${y}px)`; // 0, because we use translate further down. Both combine.
+      rect.style.transform = `translate(0, ${y}px)`; // 0, because we composite the x-translation further down.
 
       // Animate the box via CSS Animations
       const duration = this.width / targetFps * speed;

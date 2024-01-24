@@ -36,14 +36,17 @@ class DomEngine extends Engine {
       rect.style.width = size + "px";
       rect.style.height = size + "px";
       rect.style.position = "absolute";
-      rect.style.transform = `translate(${x}px, ${y}px)`;
+      rect.style.transform = `translate(0px, ${y}px)`; // 0, because we composite the x-translation further down.
 
       // Animate the box via WAAPI
+      const duration = this.width / targetFps * speed;
+      const delay = (duration * (x / this.width)) - duration;
       rect.animate({
-        transform: [ `translate(${x}px, ${y}px)`, `translate(${0 - size}px, ${y}px)`, `translate(${this.width + size}px, ${y}px)`, `translate(${x}px, ${y}px)`],
-        offset: [0, x / this.width, x / this.width , 1],
+        transform: [`translate(${this.width}px, 0px)`, `translate(-100%, 0px)` ],
       }, {
-        duration: this.width / targetFps * speed * 1000,
+        duration: duration.toFixed(3) * 1000,
+        delay: delay.toFixed(3) * 1000,
+        composite: 'add',
         iterations: Infinity,
       });
 
