@@ -5,9 +5,8 @@ class DomEngine extends Engine {
     super();
     this.canvas = document.createElement("div");
     this.canvas.className = "canvas";
-    this.canvas.style.width = this.width;
-    this.canvas.style.height = this.height;
-    this.canvas.style.position = "relative";
+    this.canvas.style.width = `${this.width}px`;
+    this.canvas.style.height = `${this.height}px`;
     this.content.appendChild(this.canvas);
   }
 
