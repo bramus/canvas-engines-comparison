@@ -45,6 +45,7 @@ canvas,
   overflow: clip;
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 div.rectangle {
