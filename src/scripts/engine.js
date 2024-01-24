@@ -1,5 +1,3 @@
-import "fpsmeter";
-
 class Engine {
   constructor() {
     this.content = document.querySelector("main");
