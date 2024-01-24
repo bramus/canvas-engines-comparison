@@ -34,7 +34,8 @@ class DomEngine extends Engine {
       rect.className = "rectangle";
       rect.style.width = size + "px";
       rect.style.height = size + "px";
-      rect.style.transform = `translate(0px, ${y}px)`; // 0, because we composite the x-translation further down.
+      rect.style.left = `0px`;
+      rect.style.top = `${y}px`;
 
       // Animate the box via WAAPI
       const duration = this.width / targetFps * speed;
@@ -44,7 +45,6 @@ class DomEngine extends Engine {
       }, {
         duration: duration.toFixed(3) * 1000,
         delay: delay.toFixed(3) * 1000,
-        composite: 'add',
         iterations: Infinity,
       });
 
